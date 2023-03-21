@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: query-kfc
+    env: node
+    region: singapore
+    plan: free
+    branch: main
+    startCommand: node .output/server/index.mjs
+    buildCommand: npm install && npm run build
+    healthCheckPath: /api/healthz
