@@ -1,6 +1,10 @@
 {
   "name": "query-kfc-coupon",
   "description": "query kfc coupon website",
+  "version": "0.1.0",
+  "engines": {
+    "node": "18.14.1"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

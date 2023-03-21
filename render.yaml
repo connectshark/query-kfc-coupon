@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: query-kfc
+    name: query-kfc-coupon
     env: node
     region: singapore
     plan: free
