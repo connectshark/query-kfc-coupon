@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-gray: 75 68 83;
+    --color-primary: var(--color-gray);
+  }
+}
+
+.bg-wave {
+  @apply bg-[url('../svg/wave.svg')];
+}
+
+.bg-gradient {
+  @apply bg-[url('../svg/bg.svg')];
+}

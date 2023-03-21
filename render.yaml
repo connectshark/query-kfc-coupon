@@ -8,3 +8,6 @@ services:
     startCommand: node .output/server/index.mjs
     buildCommand: npm install && npm run build
     healthCheckPath: /api/healthz
+    envVars:
+    - key: API_URL
+      sync: false
