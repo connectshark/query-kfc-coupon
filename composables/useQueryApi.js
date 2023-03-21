@@ -1,9 +1,11 @@
 export default function () {
   const loading = ref(false)
   const data = ref(null)
+  const err = ref(false)
   const fetchData = async ({ code }) => {
     data.value = null
     loading.value = true
+    err.value = false
     const fetch_response = await fetch('/api/coupon', {
       method: 'POST',
       body: JSON.stringify({
@@ -11,7 +13,11 @@ export default function () {
       })
     })
     const res = await fetch_response.json()
-    data.value = res
+    if (res.Coupon.length > 0) {
+      data.value = res
+    } else {
+      err.value = true
+    }
     loading.value = false
   }
 
@@ -23,6 +29,7 @@ export default function () {
     loading,
     data,
     query: fetchData,
-    reset
+    reset,
+    err
   }
 }

@@ -46,7 +46,15 @@
           <button @click="reset" class="bg-emerald-300 p-4 rounded-3xl hover:opacity-80 transition-opacity" type="button">清除</button>
         </p>
       </div>
+      <div v-if="err">有些錯誤</div>
     </div>
+    <template #not-found>
+      <h2 class=" text-center text-3xl">404</h2>
+      <p class=" text-center">無此頁</p>
+      <p class=" text-center">
+        <NuxtLink to="/">回首頁</NuxtLink>
+      </p>
+    </template>
 </NuxtLayout>
 </template>
 
@@ -57,7 +65,8 @@ const {
   loading,
   query,
   data,
-  reset
+  reset,
+  err
 } = useQueryApi()
 
 const searchHandler = () => {
